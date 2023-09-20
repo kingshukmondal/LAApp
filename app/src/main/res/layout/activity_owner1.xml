@@ -128,42 +128,27 @@
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:textStyle="bold"/>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/phoneNumberLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Phone Number"
-                    android:layout_marginBottom="20dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="+91"
-                            android:textSize="14sp"
-                            android:textColor="@color/black"
-                            android:paddingStart="10dp"
-                            android:paddingEnd="10dp"/>
 
                         <EditText
                             android:id="@+id/phoneNumber"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="14sp"
+                            android:background="@drawable/box1"
+                            android:textSize="@dimen/_14sdp"
+                            android:layout_marginBottom="20dp"
                             android:maxLines="1"
+                            android:hint="+91"
+                            android:paddingLeft="@dimen/_25sdp"
+                            android:textColorHint="@color/black"
                             android:lines="1"
-                            android:inputType="phone"
+                            android:inputType="text"
+                            android:paddingHorizontal="@dimen/_10sdp"
                             android:textColor="@color/black"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="7dp"
-                            android:background="@drawable/box1" />
+                            android:paddingVertical="@dimen/_7sdp"/>
                     </LinearLayout>
 
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -318,6 +303,20 @@
                     android:paddingHorizontal="@dimen/_10sdp"
                     android:textColor="@color/black"
                     android:paddingVertical="@dimen/_7sdp"/>
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/ip11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/box1"
+                    android:textSize="@dimen/_14sdp"
+                    android:layout_marginBottom="@dimen/_35sdp"
+                    android:maxLines="1"
+                    android:lines="1"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:paddingVertical="@dimen/_7sdp"/>
 
 
             </LinearLayout>
@@ -329,12 +328,12 @@
 
 
 
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+
 
     <TextView
         android:id="@+id/login"
-        android:layout_width="387dp"
+        android:layout_width="match_parent"
         android:layout_height="63dp"
         android:layout_gravity="bottom"
         android:layout_marginHorizontal="@dimen/_10sdp"
