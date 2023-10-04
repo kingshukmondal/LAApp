@@ -217,6 +217,7 @@
                     android:textColor="@color/black"
                     android:paddingVertical="@dimen/_7sdp"/>
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Address 3"
@@ -226,6 +227,7 @@
                     android:textStyle="bold"/>
 
                 <EditText
+                    android:visibility="gone"
                     android:id="@+id/address3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -303,8 +305,16 @@
                     android:paddingHorizontal="@dimen/_10sdp"
                     android:textColor="@color/black"
                     android:paddingVertical="@dimen/_7sdp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:textColor="#000000"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:textStyle="bold"/>
                 <EditText
-                    android:visibility="gone"
                     android:id="@+id/ip11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

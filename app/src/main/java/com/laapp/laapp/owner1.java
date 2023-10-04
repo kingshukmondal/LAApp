@@ -125,15 +125,14 @@ public class owner1 extends AppCompatActivity {
                         Connection con = ConnectionClass1();
                         if (con != null) {
                             CallableStatement callableStatement = con.prepareCall("{call dbo.SP_LoginReg(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)}");
-                            //   IPGeolocation ipGeolocation = new IPGeolocation();
-                            // Set the input parameters.
+
                             callableStatement.setString(1, sname);
                             callableStatement.setString(2, semail);
                             callableStatement.setString(3, sphoneNumber);
                             callableStatement.setString(4, "91");
                             callableStatement.setString(5, saddress1);
                             callableStatement.setString(6, saddress2);
-                            callableStatement.setString(7, saddress3);
+                            callableStatement.setString(7, "null");
                             callableStatement.setString(8, spincode);
                             callableStatement.setString(9, scity);
                             callableStatement.setString(10, "19");
@@ -160,7 +159,7 @@ public class owner1 extends AppCompatActivity {
                             // Print the output parameter value.
                             System.out.println("STATUS: " + status);
                             Log.v("Status", status);
-                            //  Toast.makeText(owner1.this, status, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(owner1.this, status, Toast.LENGTH_SHORT).show();
                         } else {
                             Log.v("Error", "Null Connection");
                         }
