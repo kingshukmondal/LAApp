@@ -39,6 +39,8 @@ import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.Task;
 
+import org.json.JSONObject;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -151,15 +153,25 @@ public class owner1 extends AppCompatActivity {
 
                             // Get the output parameter value.
                             String status = callableStatement.getString(17);
+                            String s1 = "";
+                            try {
 
-                            // Close the callable statement and connection.
+                                JSONObject obj = new JSONObject(status);
+
+                               s1=obj.getString("ERRDESC");
+                              
+                                Log.d("My App",s1);
+
+                            } catch (Throwable t) {
+                                Log.e("My App", "Could not parse malformed JSON: \"" + status + "\"");
+                            }
                             callableStatement.close();
                             con.close();
-
+                            Toast.makeText(getApplicationContext(), s1, Toast.LENGTH_SHORT).show();
                             // Print the output parameter value.
                             System.out.println("STATUS: " + status);
                             Log.v("Status", status);
-                            Toast.makeText(owner1.this, status, Toast.LENGTH_SHORT).show();
+                         //   Toast.makeText(owner1.this, status, Toast.LENGTH_SHORT).show();
                         } else {
                             Log.v("Error", "Null Connection");
                         }
@@ -269,7 +281,10 @@ public class owner1 extends AppCompatActivity {
     private void updateUIWithLocation(double lat, double longi) {
         // You can access latitude and longitude here
         // For example, you can update TextViews, send them to a server, etc.
-        Toast.makeText(this, ""+latitude+","+longitude, Toast.LENGTH_SHORT).show();
+
+
+
+    //    Toast.makeText(this, ""+latitude+","+longitude, Toast.LENGTH_SHORT).show();
     }
 
 

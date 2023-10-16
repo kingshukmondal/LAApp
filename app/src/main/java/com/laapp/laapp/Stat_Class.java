@@ -12,6 +12,15 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -99,6 +108,28 @@ public class Stat_Class {
 //        Toast.makeText(getApplicationContext(), ip1.getText().toString(), Toast.LENGTH_SHORT).show();
 //
 //    }
+
+
+    void SendMail(String Email, String Password , String Port) throws MessagingException {
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.auth", "true");
+
+        Session session = Session.getDefaultInstance(props, null);
+
+        MimeMessage msg = new MimeMessage(session);
+        msg.setFrom(new InternetAddress("email"));
+        msg.addRecipient(Message.RecipientType.TO, new InternetAddress("kingshukmondal02804@gmail.com"));
+        msg.setSubject("This is the subject");
+        msg.setText("This is the body of the email");
+
+        Transport transport = session.getTransport("smtp");
+        transport.connect("smtp.gmail.com", Email, Password);
+        transport.sendMessage(msg, msg.getAllRecipients());
+        transport.close();
+    }
 
 
 }

@@ -41,5 +41,5 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.14.7'
     implementation 'com.google.android.gms:play-services-location:21.0.1'
-
+    implementation 'com.sun.mail:javax.mail:1.6.2'
 }
